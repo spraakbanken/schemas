@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://raw.githubusercontent.com/spraakbanken/schemas/master/npegl/npegl.schema.json",
+
+  "definitions": {
+    "lexical_entity": {
+      "type" : "object",
+      "properties": {
+        "Annotation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "cat": { "type": "string" },
+              "features": {
+                "type": "object",
+                "properties": {
+                  "DegrVal": { "type": "string" }
+                }
+              },
+              "indices": {
+                "type": "object"
+              },
+              "tags": {
+                "type": "object"
+              },
+              "text": { "type": "string" }
+            },
+            "required": ["cat", "features", "indices", "tags", "text"],
+            "additionalProperties": false
+          }
+        },
+        "Annotation_time": { "type": "number" },
+        "Annotator": { "type": "string" },
+        "Case": { "type": "string" },
+        "Comments": { "type": "string" },
+        "Context": { "type": "string" },
+        "Corpus_unit_id": { "type": "string" },
+        "DB_item_id": { "type": "string" },
+        "Degree_of_interest": { "type": "string" },
+        "Gender": { "type": "string" },
+        "Grammatical_function": { "type": "string" },
+        "Language": { "type": "string" },
+        "Links": {
+          "type": "object",
+          "properties": {
+            "Contains": { "type": "array" },
+            "Is_contained_by": { "type": "array" },
+            "Other": { "type": "array"}
+          }
+        },
+        "Number": { "type": "string" },
+        "Referential_status": { "type": "string" },
+        "Segmentation": {
+          "type": "object",
+          "properties": {
+            "xml": { "type": "string" }
+          }
+        },
+        "Verified": { "type": "string" },
+        "_Order": { "type": "string" },
+        "lexiconName": { "type": "string" },
+        "lexiconOrder": { "type": "number" }
+      },
+      "required": [
+        "Annotation",
+        "Annotator",
+        "Annotation_time",
+        "Case",
+        "Comments",
+        "Context",
+        "Corpus_unit_id",
+        "DB_item_id",
+        "Degree_of_interest",
+        "Gender",
+        "Grammatical_function",
+        "Language",
+        "Links",
+        "Number",
+        "Referential_status",
+        "Segmentation",
+        "Verified",
+        "_Order",
+        "lexiconName",
+        "lexiconOrder"
+      ]
+    }
+  },
+  "type" : "object",
+  "properties" : {
+    "$ref": "#/definitions/lexical_entity"
+  }
+}
